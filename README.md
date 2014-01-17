@@ -24,6 +24,14 @@ The first version of `Ruby.app` simply ran the user-supplied `main.rb` file usin
 
 TODO
 
+# Using
+
+`rake -T` will show you which platforms you can build for. This has been tested only with x86_64 so far.
+
+Warning: running these tasks will blow away your existing RVM installation. Commenting out the `install_rvm_ruby.sh` call in the `Rakefile` will prevent that, but may mean that you need to re-compile native gems, depending on the platform you're targeting.
+
+After running the rake tasks, depending on what you've changed, you may need to open the XCode project and build it in order to get things compiled in the sample .app bundle.
+
 # License
 
 Everything in this repository has been released under the MIT license. As for the Ruby installation that is contained in binary builds of the `Ruby.app`, please see the licenses for Ruby and its standard library.
