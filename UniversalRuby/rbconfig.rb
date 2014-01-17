@@ -6,25 +6,25 @@
 # changes made to this file will be lost the next time ruby is built.
 
 module RbConfig
-  RUBY_VERSION == "2.0.0" or
-    raise "ruby lib version (2.0.0) doesn't match executable version (#{RUBY_VERSION})"
+  RUBY_VERSION == "1.9.3" or
+    raise "ruby lib version (1.9.3) doesn't match executable version (#{RUBY_VERSION})"
 
   TOPDIR = File.dirname(__FILE__).chomp!("/lib")
   DESTDIR = '' unless defined? DESTDIR
   CONFIG = {}
   CONFIG["DESTDIR"] = DESTDIR
-  CONFIG["MAJOR"] = "2"
-  CONFIG["MINOR"] = "0"
-  CONFIG["TEENY"] = "0"
-  CONFIG["PATCHLEVEL"] = "247"
+  CONFIG["MAJOR"] = "1"
+  CONFIG["MINOR"] = "9"
+  CONFIG["TEENY"] = "1"
+  CONFIG["PATCHLEVEL"] = "448"
   CONFIG["INSTALL"] = '/usr/bin/install -c'
   CONFIG["EXEEXT"] = ""
   CONFIG["prefix"] = TOPDIR
   CONFIG["ruby_install_name"] = "ruby"
   CONFIG["RUBY_INSTALL_NAME"] = "ruby"
-  CONFIG["RUBY_SO_NAME"] = "ruby.2.0.0"
+  CONFIG["RUBY_SO_NAME"] = "ruby.1.9.1"
   CONFIG["exec"] = "exec"
-  CONFIG["ruby_pc"] = "ruby-2.0.pc"
+  CONFIG["ruby_pc"] = "ruby-1.9.pc"
   CONFIG["PACKAGE"] = "ruby"
   CONFIG["BUILTIN_TRANSSRCS"] = " newline.c"
   CONFIG["USE_RUBYGEMS"] = "YES"
@@ -47,7 +47,7 @@ module RbConfig
   CONFIG["sitedir"] = "$(rubylibprefix)/site_ruby"
   CONFIG["rubyarchdir"] = "$(rubylibdir)/$(arch)"
   CONFIG["rubylibdir"] = "$(rubylibprefix)/$(ruby_version)"
-  CONFIG["ruby_version"] = "2.0.0"
+  CONFIG["ruby_version"] = "1.9.1"
   CONFIG["sitearch"] = "$(arch)"
   CONFIG["arch"] = "universal-darwin10.0"
   CONFIG["sitearchincludedir"] = "$(includedir)/$(sitearch)"
@@ -191,7 +191,7 @@ module RbConfig
   CONFIG["build_cpu"] = "x86_64"
   CONFIG["build"] = "x86_64-apple-darwin10.0"
   CONFIG["RUBY_RELEASE_DATE"] = "2013-06-27"
-  CONFIG["RUBY_PROGRAM_VERSION"] = "2.0.0"
+  CONFIG["RUBY_PROGRAM_VERSION"] = "1.9.3"
   CONFIG["target_alias"] = ""
   CONFIG["host_alias"] = ""
   CONFIG["build_alias"] = "x86_64-apple-darwin10.0"

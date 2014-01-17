@@ -1,14 +1,14 @@
-RVM_RUBY         = "ruby-2.0.0-p247"
+RVM_RUBY         = "ruby-1.9.3-p448"
 # Separate constant because Ruby 1.9.2 still had a 'libruby.1.9.1.dylib'
-INTERNAL_VERSION = "2.0.0"
+INTERNAL_VERSION = "1.9.1"
 RUBY_DYLIB       = "libruby.#{INTERNAL_VERSION}.dylib"
 RUBY_DYLIB_ID    = "@executable_path/../Frameworks/#{RUBY_DYLIB}"
 TARGET_ROOT      = "UniversalRuby"
 SOURCE_ROOT      = "#{ENV['HOME']}/.rvm/rubies/#{RVM_RUBY}"
 GEM_ROOT         = "#{ENV['HOME']}/.rvm/gems/#{RVM_RUBY}/gems"
 ALL_PLATFORMS    = [:ppc, :i386, :x86_64]
-LIB_KILLLIST     = %w(README irb rake* rdoc* *ubygems* readline* tcltk* tk* tcltklib* rss* *-darwin*)
-GEMS             = %w(gosu texplay chipmunk ruby-opengl2)
+LIB_KILLLIST     = %w(README irb rake* rdoc* readline* tcltk* tk* tcltklib* rss* *-darwin*)
+GEMS             = %w(eventmachine thin)
 
 # TODO - still necessary?
 CFLAGS           = {
@@ -33,23 +33,24 @@ def merge_lib source_file, target_file
 end
 
 ALL_PLATFORMS.each do |platform|
+  desc "Build #{platform} ruby app shell"
   task platform.to_sym do
     mkdir_p "#{TARGET_ROOT}/include"
     mkdir_p "#{TARGET_ROOT}/lib"
-    
+
     # Let RVM install the correct Ruby
     sh "env RVM_RUBY=#{RVM_RUBY} RVM_ARCH=#{platform} " +
        "    RVM_BUILD=#{BUILD[platform]} RVM_CFLAGS=#{CFLAGS[platform]} " +
        "    RVM_GEMS='#{GEMS.join(' ')}' " +
        "    bash #{TARGET_ROOT}/install_rvm_ruby.sh"
-    
+
     # Copy headers
     sh "cp -R #{SOURCE_ROOT}/include/ruby*/* #{TARGET_ROOT}/include/"
     # Copy rbconfig
     sh "cp #{TARGET_ROOT}/rbconfig.rb #{TARGET_ROOT}/lib/rbconfig.rb"
     # Rename platform-specific folder so Xcode will find it
     sh "mv #{TARGET_ROOT}/include/*-darwin* #{TARGET_ROOT}/include/#{platform}"
-    
+
     # Copy Ruby libraries
     sh "cp -R #{SOURCE_ROOT}/lib/ruby/#{INTERNAL_VERSION}/* #{TARGET_ROOT}/lib"
     # Merge libruby with existing platforms
@@ -58,7 +59,7 @@ ALL_PLATFORMS.each do |platform|
     target_file = "#{TARGET_ROOT}/#{RUBY_DYLIB}"
     sh "install_name_tool -id #{RUBY_DYLIB_ID} #{source_file}"
     merge_lib source_file, target_file
-    
+
     # Merge binary libraries
     Dir["#{SOURCE_ROOT}/lib/ruby/#{INTERNAL_VERSION}/*-darwin*/**/*.bundle"].each do |source_file|
       target_file = source_file.dup
@@ -68,7 +69,7 @@ ALL_PLATFORMS.each do |platform|
       mkdir_p File.dirname(target_file)
       merge_lib source_file, target_file
     end
-    
+
     # Merge gems
     GEMS.each do |gem_name|
       gem_lib = Dir["#{GEM_ROOT}/#{gem_name}-*/lib"].first
