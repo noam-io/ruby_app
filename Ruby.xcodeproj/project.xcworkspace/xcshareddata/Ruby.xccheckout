@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5BA36F98-FA6E-42C3-AC8C-74DD059EB124</string>
+	<string>15E66089-A2D7-4550-8C07-BE0763EC3826</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Ruby</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2DDF85B7-A278-466F-A6E1-806A5DF28DC0</key>
-		<string>ssh://github.com/jlnr/ruby_app.git</string>
+		<key>05581BA2-C341-4592-A23F-EF2F0E77E943</key>
+		<string>ssh://github.com/trptcolin/ruby_app.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Ruby.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2DDF85B7-A278-466F-A6E1-806A5DF28DC0</key>
+		<key>05581BA2-C341-4592-A23F-EF2F0E77E943</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/jlnr/ruby_app.git</string>
+	<string>ssh://github.com/trptcolin/ruby_app.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2DDF85B7-A278-466F-A6E1-806A5DF28DC0</string>
+	<string>05581BA2-C341-4592-A23F-EF2F0E77E943</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2DDF85B7-A278-466F-A6E1-806A5DF28DC0</string>
+			<string>05581BA2-C341-4592-A23F-EF2F0E77E943</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ruby_app</string>
 		</dict>

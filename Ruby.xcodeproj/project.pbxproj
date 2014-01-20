@@ -10,6 +10,10 @@
 		3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B655E8518883C4500A08E10 /* Cocoa.framework */; };
 		3B655E8818883C6100A08E10 /* libruby.1.9.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */; };
 		3B6566B318883DF800A08E10 /* libruby.1.9.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */; };
+		3BAEB659188D83280091700B /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */; };
+		3BAEB65A188D83280091700B /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */; };
+		3BC7390D188D81C600C25925 /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */; };
+		3BC7390E188D81C600C25925 /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */; };
 		D4EF91841797495A00ACB192 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = D4EF91831797495A00ACB192 /* lib */; };
 		D4EF918617974AFC00ACB192 /* Ruby.icns in Resources */ = {isa = PBXBuildFile; fileRef = D4EF918517974AFC00ACB192 /* Ruby.icns */; };
 		D4EF918917974B5800ACB192 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EF918717974B5800ACB192 /* main.m */; };
@@ -23,6 +27,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3BAEB659188D83280091700B /* libcrypto.1.0.0.dylib in CopyFiles */,
+				3BAEB65A188D83280091700B /* libssl.1.0.0.dylib in CopyFiles */,
 				3B6566B318883DF800A08E10 /* libruby.1.9.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,12 +36,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B655E8518883C4500A08E10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = ../../../../../../System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
+		3B655E8518883C4500A08E10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
 		3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libruby.1.9.1.dylib; path = UniversalRuby/libruby.1.9.1.dylib; sourceTree = "<group>"; };
+		3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.1e/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
+		3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.1e/lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
 		D425BB591796CF4000540499 /* Ruby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruby.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D425BB5F1796CF4000540499 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		D425BB601796CF4000540499 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D425BB611796CF4000540499 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4EF91831797495A00ACB192 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = UniversalRuby/lib; sourceTree = SOURCE_ROOT; };
 		D4EF918517974AFC00ACB192 /* Ruby.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Ruby.icns; sourceTree = SOURCE_ROOT; };
 		D4EF918717974B5800ACB192 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
@@ -50,6 +55,8 @@
 			files = (
 				3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */,
 				3B655E8818883C6100A08E10 /* libruby.1.9.1.dylib in Frameworks */,
+				3BC7390E188D81C600C25925 /* libssl.1.0.0.dylib in Frameworks */,
+				3BC7390D188D81C600C25925 /* libcrypto.1.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,21 +83,12 @@
 		D425BB5B1796CF4000540499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */,
+				3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */,
 				3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */,
 				3B655E8518883C4500A08E10 /* Cocoa.framework */,
-				D425BB5E1796CF4000540499 /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D425BB5E1796CF4000540499 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D425BB5F1796CF4000540499 /* AppKit.framework */,
-				D425BB601796CF4000540499 /* CoreData.framework */,
-				D425BB611796CF4000540499 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		D425BB621796CF4000540499 /* ruby_app */ = {
@@ -232,8 +230,9 @@
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/UniversalRuby\\\"",
+					"\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\"",
 					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby,
+					/usr/local/Cellar/openssl/1.0.1e/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
@@ -247,8 +246,9 @@
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/UniversalRuby\\\"",
+					"\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\"",
 					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby,
+					/usr/local/Cellar/openssl/1.0.1e/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
