@@ -1,4 +1,10 @@
 require 'rubygems'
+
 require 'eventmachine'
 
-puts "Hello OSX!"
+$x = 0
+while true
+    puts "#{$x}. ohai osx!"
+    sleep 1
+    $x += 1
+end

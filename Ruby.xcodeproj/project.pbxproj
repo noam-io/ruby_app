@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B655E8518883C4500A08E10 /* Cocoa.framework */; };
-		3B655E8818883C6100A08E10 /* libruby.1.9.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */; };
-		3B6566B318883DF800A08E10 /* libruby.1.9.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */; };
-		3BAEB659188D83280091700B /* libcrypto.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */; };
-		3BAEB65A188D83280091700B /* libssl.1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */; };
-		3BC7390D188D81C600C25925 /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */; };
-		3BC7390E188D81C600C25925 /* libssl.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */; };
+		3BC1B914188EFB2F0069828F /* libruby-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC1B913188EFB2F0069828F /* libruby-static.a */; };
+		3BC1B91E188EFC4E0069828F /* erb in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B916188EFC4E0069828F /* erb */; };
+		3BC1B91F188EFC4E0069828F /* gem in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B917188EFC4E0069828F /* gem */; };
+		3BC1B920188EFC4E0069828F /* irb in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B918188EFC4E0069828F /* irb */; };
+		3BC1B921188EFC4E0069828F /* rake in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B919188EFC4E0069828F /* rake */; };
+		3BC1B922188EFC4E0069828F /* rdoc in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B91A188EFC4E0069828F /* rdoc */; };
+		3BC1B923188EFC4E0069828F /* ri in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B91B188EFC4E0069828F /* ri */; };
+		3BC1B924188EFC4E0069828F /* ruby in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B91C188EFC4E0069828F /* ruby */; };
+		3BC1B925188EFC4E0069828F /* testrb in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B91D188EFC4E0069828F /* testrb */; };
+		3BC1B927188EFC550069828F /* config in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B926188EFC550069828F /* config */; };
 		D4EF91841797495A00ACB192 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = D4EF91831797495A00ACB192 /* lib */; };
 		D4EF918617974AFC00ACB192 /* Ruby.icns in Resources */ = {isa = PBXBuildFile; fileRef = D4EF918517974AFC00ACB192 /* Ruby.icns */; };
 		D4EF918917974B5800ACB192 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EF918717974B5800ACB192 /* main.m */; };
@@ -25,11 +29,8 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 6;
 			files = (
-				3BAEB659188D83280091700B /* libcrypto.1.0.0.dylib in CopyFiles */,
-				3BAEB65A188D83280091700B /* libssl.1.0.0.dylib in CopyFiles */,
-				3B6566B318883DF800A08E10 /* libruby.1.9.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,9 +38,41 @@
 
 /* Begin PBXFileReference section */
 		3B655E8518883C4500A08E10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
-		3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libruby.1.9.1.dylib; path = UniversalRuby/libruby.1.9.1.dylib; sourceTree = "<group>"; };
-		3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.1e/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
-		3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.1.0.0.dylib; path = /usr/local/Cellar/openssl/1.0.1e/lib/libssl.1.0.0.dylib; sourceTree = "<group>"; };
+		3BC1B8F8188EFAB60069828F /* classext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classext.h; sourceTree = "<group>"; };
+		3BC1B8F9188EFAB60069828F /* rubyio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubyio.h; sourceTree = "<group>"; };
+		3BC1B8FA188EFAB60069828F /* rubysig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubysig.h; sourceTree = "<group>"; };
+		3BC1B8FB188EFAB60069828F /* st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = st.h; sourceTree = "<group>"; };
+		3BC1B8FC188EFAB60069828F /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		3BC1B8FD188EFAB60069828F /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		3BC1B8FE188EFAB60069828F /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
+		3BC1B8FF188EFAB60069828F /* digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = digest.h; sourceTree = "<group>"; };
+		3BC1B900188EFAB60069828F /* dl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dl.h; sourceTree = "<group>"; };
+		3BC1B901188EFAB60069828F /* encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encoding.h; sourceTree = "<group>"; };
+		3BC1B902188EFAB60069828F /* intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intern.h; sourceTree = "<group>"; };
+		3BC1B903188EFAB60069828F /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
+		3BC1B904188EFAB60069828F /* missing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = missing.h; sourceTree = "<group>"; };
+		3BC1B905188EFAB60069828F /* oniguruma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oniguruma.h; sourceTree = "<group>"; };
+		3BC1B906188EFAB60069828F /* re.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = re.h; sourceTree = "<group>"; };
+		3BC1B907188EFAB60069828F /* regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regex.h; sourceTree = "<group>"; };
+		3BC1B908188EFAB60069828F /* ruby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ruby.h; sourceTree = "<group>"; };
+		3BC1B909188EFAB60069828F /* st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = st.h; sourceTree = "<group>"; };
+		3BC1B90A188EFAB60069828F /* subst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subst.h; sourceTree = "<group>"; };
+		3BC1B90B188EFAB60069828F /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
+		3BC1B90C188EFAB60069828F /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		3BC1B90D188EFAB60069828F /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		3BC1B90E188EFAB60069828F /* vm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vm.h; sourceTree = "<group>"; };
+		3BC1B90F188EFAB60069828F /* ruby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ruby.h; sourceTree = "<group>"; };
+		3BC1B912188EFAB60069828F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		3BC1B913188EFB2F0069828F /* libruby-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libruby-static.a"; path = "UniversalRuby/lib/libruby-static.a"; sourceTree = "<group>"; };
+		3BC1B916188EFC4E0069828F /* erb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erb; sourceTree = "<group>"; };
+		3BC1B917188EFC4E0069828F /* gem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gem; sourceTree = "<group>"; };
+		3BC1B918188EFC4E0069828F /* irb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = irb; sourceTree = "<group>"; };
+		3BC1B919188EFC4E0069828F /* rake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rake; sourceTree = "<group>"; };
+		3BC1B91A188EFC4E0069828F /* rdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rdoc; sourceTree = "<group>"; };
+		3BC1B91B188EFC4E0069828F /* ri */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ri; sourceTree = "<group>"; };
+		3BC1B91C188EFC4E0069828F /* ruby */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ruby; sourceTree = "<group>"; };
+		3BC1B91D188EFC4E0069828F /* testrb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testrb; sourceTree = "<group>"; };
+		3BC1B926188EFC550069828F /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config; path = UniversalRuby/config; sourceTree = "<group>"; };
 		D425BB591796CF4000540499 /* Ruby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EF91831797495A00ACB192 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = UniversalRuby/lib; sourceTree = SOURCE_ROOT; };
 		D4EF918517974AFC00ACB192 /* Ruby.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Ruby.icns; sourceTree = SOURCE_ROOT; };
@@ -53,16 +86,103 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC1B914188EFB2F0069828F /* libruby-static.a in Frameworks */,
 				3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */,
-				3B655E8818883C6100A08E10 /* libruby.1.9.1.dylib in Frameworks */,
-				3BC7390E188D81C600C25925 /* libssl.1.0.0.dylib in Frameworks */,
-				3BC7390D188D81C600C25925 /* libcrypto.1.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BC1B8F4188EFAB60069828F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B8F5188EFAB60069828F /* ruby-2.1.0 */,
+			);
+			name = include;
+			path = UniversalRuby/include;
+			sourceTree = "<group>";
+		};
+		3BC1B8F5188EFAB60069828F /* ruby-2.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B8F6188EFAB60069828F /* ruby */,
+				3BC1B90F188EFAB60069828F /* ruby.h */,
+				3BC1B910188EFAB60069828F /* x86_64-darwin12.0 */,
+			);
+			path = "ruby-2.1.0";
+			sourceTree = "<group>";
+		};
+		3BC1B8F6188EFAB60069828F /* ruby */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B8F7188EFAB60069828F /* backward */,
+				3BC1B8FD188EFAB60069828F /* debug.h */,
+				3BC1B8FE188EFAB60069828F /* defines.h */,
+				3BC1B8FF188EFAB60069828F /* digest.h */,
+				3BC1B900188EFAB60069828F /* dl.h */,
+				3BC1B901188EFAB60069828F /* encoding.h */,
+				3BC1B902188EFAB60069828F /* intern.h */,
+				3BC1B903188EFAB60069828F /* io.h */,
+				3BC1B904188EFAB60069828F /* missing.h */,
+				3BC1B905188EFAB60069828F /* oniguruma.h */,
+				3BC1B906188EFAB60069828F /* re.h */,
+				3BC1B907188EFAB60069828F /* regex.h */,
+				3BC1B908188EFAB60069828F /* ruby.h */,
+				3BC1B909188EFAB60069828F /* st.h */,
+				3BC1B90A188EFAB60069828F /* subst.h */,
+				3BC1B90B188EFAB60069828F /* thread.h */,
+				3BC1B90C188EFAB60069828F /* util.h */,
+				3BC1B90D188EFAB60069828F /* version.h */,
+				3BC1B90E188EFAB60069828F /* vm.h */,
+			);
+			path = ruby;
+			sourceTree = "<group>";
+		};
+		3BC1B8F7188EFAB60069828F /* backward */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B8F8188EFAB60069828F /* classext.h */,
+				3BC1B8F9188EFAB60069828F /* rubyio.h */,
+				3BC1B8FA188EFAB60069828F /* rubysig.h */,
+				3BC1B8FB188EFAB60069828F /* st.h */,
+				3BC1B8FC188EFAB60069828F /* util.h */,
+			);
+			path = backward;
+			sourceTree = "<group>";
+		};
+		3BC1B910188EFAB60069828F /* x86_64-darwin12.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B911188EFAB60069828F /* ruby */,
+			);
+			path = "x86_64-darwin12.0";
+			sourceTree = "<group>";
+		};
+		3BC1B911188EFAB60069828F /* ruby */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B912188EFAB60069828F /* config.h */,
+			);
+			path = ruby;
+			sourceTree = "<group>";
+		};
+		3BC1B915188EFC4E0069828F /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				3BC1B916188EFC4E0069828F /* erb */,
+				3BC1B917188EFC4E0069828F /* gem */,
+				3BC1B918188EFC4E0069828F /* irb */,
+				3BC1B919188EFC4E0069828F /* rake */,
+				3BC1B91A188EFC4E0069828F /* rdoc */,
+				3BC1B91B188EFC4E0069828F /* ri */,
+				3BC1B91C188EFC4E0069828F /* ruby */,
+				3BC1B91D188EFC4E0069828F /* testrb */,
+			);
+			name = bin;
+			path = UniversalRuby/bin;
+			sourceTree = "<group>";
+		};
 		D425BB501796CF4000540499 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +203,7 @@
 		D425BB5B1796CF4000540499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3BC7390B188D81C600C25925 /* libcrypto.1.0.0.dylib */,
-				3BC7390C188D81C600C25925 /* libssl.1.0.0.dylib */,
-				3B655E8718883C6100A08E10 /* libruby.1.9.1.dylib */,
+				3BC1B913188EFB2F0069828F /* libruby-static.a */,
 				3B655E8518883C4500A08E10 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -94,6 +212,9 @@
 		D425BB621796CF4000540499 /* ruby_app */ = {
 			isa = PBXGroup;
 			children = (
+				3BC1B915188EFC4E0069828F /* bin */,
+				3BC1B926188EFC550069828F /* config */,
+				3BC1B8F4188EFAB60069828F /* include */,
 				D4EF918E17976ABA00ACB192 /* Info.plist */,
 				D4EF91831797495A00ACB192 /* lib */,
 				D4EF918717974B5800ACB192 /* main.m */,
@@ -155,8 +276,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC1B920188EFC4E0069828F /* irb in Resources */,
+				3BC1B91E188EFC4E0069828F /* erb in Resources */,
 				D4EF91841797495A00ACB192 /* lib in Resources */,
 				D4EF918617974AFC00ACB192 /* Ruby.icns in Resources */,
+				3BC1B927188EFC550069828F /* config in Resources */,
+				3BC1B924188EFC4E0069828F /* ruby in Resources */,
+				3BC1B925188EFC4E0069828F /* testrb in Resources */,
+				3BC1B922188EFC4E0069828F /* rdoc in Resources */,
+				3BC1B921188EFC4E0069828F /* rake in Resources */,
+				3BC1B91F188EFC4E0069828F /* gem in Resources */,
+				3BC1B923188EFC4E0069828F /* ri in Resources */,
 				D4EF918A17974B5800ACB192 /* main.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,12 +357,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = .;
+				HEADER_SEARCH_PATHS = (
+					UniversalRuby/include,
+					"UniversalRuby/include/$(arch)",
+					"UniversalRuby/include/ruby-2.1.0",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\\\\\\\\\"",
 					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby,
-					/usr/local/Cellar/openssl/1.0.1e/lib,
+					"/Users/colin/Projects/oss/ruby/ruby_app/tmp/ruby-2.1.0/lib",
+					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;
@@ -243,12 +379,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = .;
+				HEADER_SEARCH_PATHS = (
+					UniversalRuby/include,
+					"UniversalRuby/include/$(arch)",
+					"UniversalRuby/include/ruby-2.1.0",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\"",
+					"\\\\\\\\\\\\\\\"$(SRCROOT)/UniversalRuby\\\\\\\\\\\\\\\"",
 					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby,
-					/usr/local/Cellar/openssl/1.0.1e/lib,
+					"/Users/colin/Projects/oss/ruby/ruby_app/tmp/ruby-2.1.0/lib",
+					/Users/colin/Projects/oss/ruby/ruby_app/UniversalRuby/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.8;

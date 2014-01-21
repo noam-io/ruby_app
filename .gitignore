@@ -1,5 +1,6 @@
-/UniversalRuby/include/
-/UniversalRuby/lib/
-/UniversalRuby/libruby.?.?.?.dylib
 /Ruby.app/
+/tmp
+/UniversalRuby/*
 /**/xcuserdata
+*.tar.bz2
+*.tar.gz

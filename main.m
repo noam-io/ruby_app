@@ -3,7 +3,6 @@
 
 #include <Foundation/Foundation.h>
 #include <unistd.h>
-#include "ruby.h"
 
 int main()
 {
@@ -13,27 +12,16 @@ int main()
     NSString *mainPath = [[resourcePath stringByAppendingPathComponent:@"main.rb"] retain];
     [pool drain];
 
-    char *argv[] = { "ruby", (char *)[mainPath UTF8String], 0 };
-    int argc = 2;
-    
-    char **argvPointer = argv;
-    ruby_sysinit(&argc, &argvPointer);
-    { 
-        RUBY_INIT_STACK;
-        
-        ruby_init();
-        
-        // Pretend we've already loaded rubygems
-        rb_eval_string("$LOADED_FEATURES << 'rubygems.rb'");
-        
-        // Replace the load path
-        rb_eval_string("$LOAD_PATH.clear");
-        rb_eval_string("$LOAD_PATH << Dir.pwd");
-        rb_eval_string("$LOAD_PATH << $LOAD_PATH[0] + '/lib'");
-        
-        // Let the application know it is being run from the Mac app wrapper.
-        rb_eval_string("OSX_EXECUTABLE = true");
+    NSString* rubyExecutable = [[NSBundle mainBundle] pathForResource:@"ruby" ofType:nil];
 
-        return ruby_run_node(ruby_options(argc, argv)); 
-    }
+    NSTask *task = [[NSTask alloc] init];
+    [task setLaunchPath:rubyExecutable];
+    NSString* gemHome = [[NSBundle mainBundle] pathForResource:@"lib/ruby/gems/2.1.0" ofType:nil];
+    NSString* gemPath = [[NSBundle mainBundle] pathForResource:@"lib/ruby/gems/2.1.0" ofType:nil];
+    [task setEnvironment:@{@"GEM_HOME": gemHome,
+                           @"GEM_PATH": gemPath}];
+    [task setArguments:[NSArray arrayWithObjects:@"main.rb", nil]];
+
+    [task launch];
+    [task waitUntilExit];
 }
