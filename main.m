@@ -14,11 +14,17 @@ int main()
 
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:rubyExecutable];
+
     NSString* gemHome = [NSString stringWithFormat:@"%@/%@", resourcePath, @"lib/ruby/gems/2.1.0"];
     NSString* gemPath = gemHome;
-    [task setEnvironment:@{@"GEM_HOME": gemHome,
-                           @"GEM_PATH": gemPath}];
-    // TODO: CWJ add PATH so projects can shell out (e.g. `ifconfig`)
+    NSDictionary* originalEnv = [[NSProcessInfo processInfo] environment];
+    NSMutableDictionary* newEnv = [NSMutableDictionary dictionaryWithDictionary:originalEnv];
+    NSDictionary* gemAttributes = @{@"GEM_HOME": gemHome,
+                                    @"GEM_PATH": gemPath};
+    [newEnv setValuesForKeysWithDictionary:gemAttributes];
+
+    [task setEnvironment:newEnv];
+
     [task setArguments:[NSArray arrayWithObjects:@"main.rb", nil]];
 
     [task launch];
