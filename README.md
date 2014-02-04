@@ -1,36 +1,14 @@
 # Ruby.app
 
-Universal application wrapper to deploy Ruby apps on OS X (using MRI/C Ruby, not MacRuby or JRuby). So far, it has only been used to release [Ruby/Gosu](https://github.com/jlnr/gosu) games. It can probably be adapted to wrap applications or games written in other toolkits.
+Universal application wrapper to deploy Ruby apps on OS X (using MRI/C Ruby, not MacRuby or JRuby). Has very specific native gem dependencies: not everything will just work.
 
-The idea is that `Ruby.app` contains a full, universal Ruby installation. All you have to do is provide a `main.rb` file inside the `Ruby.app/Contents/Resources/` folder that starts your game/application.
-
-# Alternatives
-
-## Why not RubyMotion?
-
-The short answer is that this project is much older than RubyMotion. It is also free, and behaves the same as ‘MRI’ Ruby on the command-line.
-
-The obvious downside of `Ruby.app` is that it might not be allowed on the Mac App Store. I am not sure if this can be fixed by adding sandboxing.
-
-## Why not use the OS X system Ruby, or Platypus?
-
-The first version of `Ruby.app` simply ran the user-supplied `main.rb` file using system Ruby (`/usr/bin/ruby`). This is also what [Platypus](http://sveinbjorn.org/platypus) does. However,
-
-* System Ruby is not stable across OS X releases. The version number has not changed a lot, from Ruby 1.8.2 (OS X 10.4) to 1.8.7 (OS X 10.7/10.8), but even point releases of 1.8.6 have managed to break code.
-* Power users frequently mess around with system Ruby. They might install or remove libraries, replace `/usr/bin/ruby` or even remove it altogether.
-* Binary dependencies (C extensions) can be shipped inside the app, but might not be compiled for the host system. Every C extension is a unique snowflake (mine included), and it can be hard to cross-compile them.
-
-# Design
-
-TODO
+The idea is that `Ruby.app` contains a full, universal Ruby installation. All you have to do is provide a `main.rb` file inside the `Ruby.app/Contents/Resources/` folder that starts your application.
 
 # Using
 
-`rake -T` will show you which platforms you can build for. This has been tested only with x86_64 so far.
-
-Warning: running these tasks will blow away your existing RVM installation. Commenting out the `install_rvm_ruby.sh` call in the `Rakefile` will prevent that, but may mean that you need to re-compile native gems, depending on the platform you're targeting.
-
-After running the rake tasks, depending on what you've changed, you may need to open the XCode project and build it in order to get things compiled in the sample .app bundle.
+1. Run `rake build` to download and build a ruby install with eventmachine and thin gem dependencies.
+2. Open the XCode project and build it.
+3. Run `tar -zcvf ruby-mac-wrapper-2014-02-03.tar.gz ./Ruby.app` to create an archive suitable for use with Releasy.
 
 # License
 
