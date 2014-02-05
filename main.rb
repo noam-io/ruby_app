@@ -2,11 +2,13 @@ require 'rubygems'
 
 require 'eventmachine'
 
-begin
-  puts system("ifconfig 2>&1")
-rescue => e
-  puts e
-end
+#begin
+#  puts system("ifconfig 2>&1")
+#rescue => e
+#  puts e
+#end
+
+system("echo 'ruby process starting' >> /tmp/startups.txt");
 
 $x = 0
 while true

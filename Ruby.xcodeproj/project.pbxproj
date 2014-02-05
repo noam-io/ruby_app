@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B655E8518883C4500A08E10 /* Cocoa.framework */; };
+		3B8FF6FE18A293DC00FA0DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FF6FD18A293DC00FA0DB4 /* AppDelegate.m */; };
+		3B8FF70018A2941E00FA0DB4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8FF6FF18A2941E00FA0DB4 /* AppKit.framework */; };
+		3B8FF70218A2A01000FA0DB4 /* relaunch.rb in Resources */ = {isa = PBXBuildFile; fileRef = 3B8FF70118A2A01000FA0DB4 /* relaunch.rb */; };
 		3BC1B914188EFB2F0069828F /* libruby-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC1B913188EFB2F0069828F /* libruby-static.a */; };
 		3BC1B91E188EFC4E0069828F /* erb in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B916188EFC4E0069828F /* erb */; };
 		3BC1B91F188EFC4E0069828F /* gem in Resources */ = {isa = PBXBuildFile; fileRef = 3BC1B917188EFC4E0069828F /* gem */; };
@@ -38,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		3B655E8518883C4500A08E10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<group>"; };
+		3B8FF6FC18A293DC00FA0DB4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B8FF6FD18A293DC00FA0DB4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B8FF6FF18A2941E00FA0DB4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		3B8FF70118A2A01000FA0DB4 /* relaunch.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = relaunch.rb; sourceTree = "<group>"; };
 		3BC1B8F8188EFAB60069828F /* classext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = classext.h; sourceTree = "<group>"; };
 		3BC1B8F9188EFAB60069828F /* rubyio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubyio.h; sourceTree = "<group>"; };
 		3BC1B8FA188EFAB60069828F /* rubysig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubysig.h; sourceTree = "<group>"; };
@@ -86,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8FF70018A2941E00FA0DB4 /* AppKit.framework in Frameworks */,
 				3BC1B914188EFB2F0069828F /* libruby-static.a in Frameworks */,
 				3B655E8618883C4500A08E10 /* Cocoa.framework in Frameworks */,
 			);
@@ -203,6 +211,7 @@
 		D425BB5B1796CF4000540499 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B8FF6FF18A2941E00FA0DB4 /* AppKit.framework */,
 				3BC1B913188EFB2F0069828F /* libruby-static.a */,
 				3B655E8518883C4500A08E10 /* Cocoa.framework */,
 			);
@@ -220,6 +229,9 @@
 				D4EF918717974B5800ACB192 /* main.m */,
 				D4EF918817974B5800ACB192 /* main.rb */,
 				D4EF918517974AFC00ACB192 /* Ruby.icns */,
+				3B8FF6FC18A293DC00FA0DB4 /* AppDelegate.h */,
+				3B8FF6FD18A293DC00FA0DB4 /* AppDelegate.m */,
+				3B8FF70118A2A01000FA0DB4 /* relaunch.rb */,
 			);
 			name = ruby_app;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 				D4EF91841797495A00ACB192 /* lib in Resources */,
 				D4EF918617974AFC00ACB192 /* Ruby.icns in Resources */,
 				3BC1B927188EFC550069828F /* config in Resources */,
+				3B8FF70218A2A01000FA0DB4 /* relaunch.rb in Resources */,
 				3BC1B924188EFC4E0069828F /* ruby in Resources */,
 				3BC1B925188EFC4E0069828F /* testrb in Resources */,
 				3BC1B922188EFC4E0069828F /* rdoc in Resources */,
@@ -298,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8FF6FE18A293DC00FA0DB4 /* AppDelegate.m in Sources */,
 				D4EF918917974B5800ACB192 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
